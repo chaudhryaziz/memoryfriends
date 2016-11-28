@@ -44,6 +44,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+  gem 'simple_form'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
