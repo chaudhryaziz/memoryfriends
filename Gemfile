@@ -48,7 +48,8 @@ group :development do
   gem 'devise'
   gem 'gravatarify', '~> 3.0.0'
   gem 'public_activity'
-
+  gem 'auto_html'
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
