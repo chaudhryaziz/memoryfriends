@@ -47,7 +47,8 @@ group :development do
   gem 'simple_form'
   gem 'devise'
   gem 'gravatarify', '~> 3.0.0'
-  
+  gem 'public_activity'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
