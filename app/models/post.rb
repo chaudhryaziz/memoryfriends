@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
+class Post < ApplicationRecord::Base
 	include PublicActivity::Model
 	belongs_to :user
 	validates_presence_of :user_id
