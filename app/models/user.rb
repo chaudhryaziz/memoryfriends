@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 #This defines the different releationships between friends, posts, and inverse_friendships which is used for Friendship requests.
    has_many :friendships, dependent: :destroy
    has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy 
-   has_many :posts, dependant: :destroy
+   has_many :posts, dependent: :destroy
 
    #request a friendship with another user
    def request_friendship(user_2)
