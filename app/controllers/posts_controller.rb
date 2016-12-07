@@ -9,10 +9,10 @@ class PostsController < ApplicationController
 		if @post.save
 			@post.create_activity key: 'post.created', owner: @post.user
 			respond_to do |format|
-				format.html {redirect_to user_path(@post.user.username), notice: "Post Has been created"}
+				format.html {redirect_to user_path(@post.user.username), notice: "Memory Has been created"}
 			end
 		else
-			redirect_to user_path(@post.user.username), notice: "Error has occured, post not created"
+			redirect_to user_path(@post.user.username), notice: "Error has occured, Memory not created"
 		end
 	end
 
@@ -24,10 +24,10 @@ class PostsController < ApplicationController
 	def update
 		if @post.update(post_params)
 		respond_to do |format|
-				format.html {redirect_to user_path(@post.user.username), notice: "Post Updated"}
+				format.html {redirect_to user_path(@post.user.username), notice: "Memory Updated"}
 		end
 		else
-		redirect_to post_path(@post), notice: "Some error has occured, taking you back to post page."
+		redirect_to post_path(@post), notice: "Some error has occured, taking you back to Memory Post page."
 		end
 	end
 
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 	def destroy
 		@post.destroy
 		respond_to do |format|
-			format.html {redirect_to user_path(@post.user.username), notice: "Post Deleted"}
+			format.html {redirect_to user_path(@post.user.username), notice: "Memory Deleted"}
 		end
 	end
 

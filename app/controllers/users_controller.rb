@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only:[:index]
 	before_action :set_user, only:[:show]
+  before_action :get_counts, only:[:index]
   
-	def index
+	def index #handle what to show when buttons on people page are clicked
 		case params[:people] when "friends"
       @users = current_user.active_friends
     when "requests"
@@ -14,13 +15,18 @@ class UsersController < ApplicationController
     end
 	end
 
-  def show
+  def show #when clicking on a user, show the following on the user page
     @post = Post.new
     @posts = @user.posts.order('created_at DESC')
     @activities = PublicActivity::Activity.where(owner_id: @user.id).order('created_at DESC')
   end
 
   private
+
+  def get_counts #get data for tiny counter numbers on buttons
+    @friend_count = current_user.active_friends.size
+    @pending_count = current_user.pending_friend_requests_to.map(&:friend).size
+  end
 
   def set_user
   	@user = User.find_by(username: params[:id])
