@@ -1,9 +1,9 @@
  <div class="jumbotron text-center">
- <h1> Timeline of Memories </h1>
- <div class="btn-group" role="group" aria-label="Default">
- <%= link_to "Everything", activities_path, class: "btn btn-default #{'active' unless params[:content]}" %>
- <%= link_to "Just Memories", activities_path(content: "posts"), class: "btn btn-default #{'active' if params[:content] == 'posts'}" %>
- </div>
+	<h1> Timeline of Memories </h1>
+	<div class="btn-group" role="group" aria-label="Default">
+		<%= link_to "Everything", activities_path, class: "btn btn-default #{'active' unless params[:content]}" %>
+		<%= link_to "Just Memories", activities_path(content: "posts"), class: "btn btn-default #{'active' if params[:content] == 'posts'}" %>
+	</div>
  </div>
 
  <div class="container">
@@ -37,3 +37,32 @@
   		<% end %>
   	</ul>
  </div>
+
+ <!-- Scroll Animations -->
+<script>
+    window.sr = ScrollReveal();
+    
+    sr.reveal('.timeline-inverted .timeline-panel', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px',
+        easing   : 'ease-in-out',
+        reset: true
+    }, 200);
+
+    sr.reveal('.timeline-badge', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px',
+        easing   : 'ease-in-out',
+        reset: true
+    }, 50);
+
+    sr.reveal('.timeline-panel', {
+        duration: 600,
+        scale: 0.3,
+        distance: '0px',
+        easing   : 'ease-in-out',
+        reset: true
+    }, 50);
+</script>

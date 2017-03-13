@@ -14,3 +14,15 @@
  *= require_self
  */
 
+ .navbar .navbar-brand {
+     color: white;
+ }
+
+.navbar-inverse {
+    background-color: transparent;
+    border-color: rgba(255,255,255,.3);
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: black;
+}
